@@ -1,9 +1,9 @@
-import EVAlogo from '../assets/color.svg';
+import EvaTransparentLogo from '../assets/EvaTransparentLogo.svg'
 
 export default function Hero() {
   return (
-    <div>
-      <image src={EVAlogo} alt='logo' class='w-40 h-40' />
+    <div class=" w-screen h-screen bg-gradient-to-b from-eva-bg to-black">
+      <img src={EvaTransparentLogo} alt="Logo" class="lg:w-64" />
     </div>
   )
 }

@@ -4,8 +4,7 @@ import Hero from './Components/Hero';
 function App() {
 
   return (
-    <div>
-      <Navbar />
+    <div class="w-screen h-screen">
       <Hero />
     </div>
   )
