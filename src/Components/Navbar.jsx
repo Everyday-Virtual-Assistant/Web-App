@@ -1,4 +1,4 @@
-import EvaTransparentLogo from '../assets/EvaTransparentLogo.svg'
+import EvaTransparentLogo from '../assets/EvaTransparentLogo.jsx'
 
 export default function Navbar() {
   return (

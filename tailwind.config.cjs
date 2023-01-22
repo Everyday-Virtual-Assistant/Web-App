@@ -5,6 +5,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      xs: "420px",
+      sm: "640px",
+      md: "768px",
+      lg: "1280px",
+      xl: "1536px"
+    },
     extend: {
       colors: {
         "eva-bg": "#2b2d42",
