@@ -4,15 +4,16 @@ import IPhoneDisplay from './Components/iOSDisplay';
 
 function App() {
 
-  const scrollToRef = useRef();
+  const scrollRefOne = useRef(null);
+  const scrollRefTwo = useRef(null);
 
   return (
     <>
       <div className="w-screen h-screen">
-        <Hero scrollRef={scrollToRef} />
+        <Hero scrollRefOne={scrollRefOne} />
       </div>
       <div className="w-screen h-screen">
-        <IPhoneDisplay scrollRef={scrollToRef} />
+        <IPhoneDisplay scrollRefOne={scrollRefOne} scrollRefTwo={scrollRefTwo} />
       </div>
     </>
   )
