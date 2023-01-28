@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Oswald';
-  src: url('../public/Oswald-Regular.ttf');
+  src: url('/Oswald-Regular.ttf');
 }
 
 :root {
