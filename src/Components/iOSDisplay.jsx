@@ -9,7 +9,7 @@ export default function IPhoneDisplay(props) {
         <div className="flex w-full justify-center items-center">
           <div className='w-3/4'>
             <h1 className="text-8xl font-brandmark">Introducing EVA, </h1>
-            <p className=" text-3xl font-brandmark">The ultimate AI assistant for all your needs. With EVA, you will have a personal assistant that can understand your needs, anticipate your requests, and complete tasks for you. EVA uses state-of-the-art machine learning algorithms to learn about you and your preferences, making it more efficient and personalized with every interaction. Whether you need help with scheduling, research, or just need someone to talk to, EVA is here for you 24/7. With EVA, you can focus on the things that matter most and leave the rest to us. Upgrade your life with EVA today!</p>
+            <p className=" text-3xl font-brandmark">The cutting-edge AI assistant app powered by OpenAI's GPT-3 and soon GPT-4. EVA is designed to make your life easier by providing you with a personal assistant that can understand your needs, anticipate your requests and complete tasks for you. With EVA, you will have access to the most advanced natural language processing technology available. EVA can understand and respond to your requests in a way that is both efficient and natural, making it feel like you are talking to a real person. EVA uses GPT-4's state-of-the-art machine learning algorithms to learn about you and your preferences, making it more efficient and personalized with every interaction. With EVA, you can focus on what matters most and leave the rest to us. Upgrade your life with EVA today!</p>
           </div>
         </div>
         <div className="flex justify-end">

@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import Hero from './Components/Hero';
 import IPhoneDisplay from './Components/iOSDisplay';
+import SignUp from './Components/SIgnUp';
 
 function App() {
 
@@ -14,6 +15,9 @@ function App() {
       </div>
       <div className="w-screen h-screen">
         <IPhoneDisplay scrollRefOne={scrollRefOne} scrollRefTwo={scrollRefTwo} />
+      </div>
+      <div className="w-screen h-screen ">
+        <SignUp scrollRefTwo={scrollRefTwo} />
       </div>
     </>
   )
