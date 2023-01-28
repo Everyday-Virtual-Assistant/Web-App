@@ -22,6 +22,8 @@ export default function SignUp(props) {
               <div className="flex justify-center my-10">
                 <button className="text-4xl font-brandmark w-full hover:bg-eva-bg hover:text-eva-text hover:border-eva-highlight" >Sign Up!</button>
               </div>
+              <p className="flex flex-wrap font-brandmark text-gray-500">When the app becomes available, you will receive an email notifying you to download the app.</p>
+              <p className="flex flex-wrap font-brandmark mb-10 text-gray-500">Expected release in Q2 2023.</p>
             </form>
           </div>
           </div>
