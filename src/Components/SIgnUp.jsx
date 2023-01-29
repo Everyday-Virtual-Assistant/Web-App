@@ -1,5 +1,13 @@
+import { useState } from 'react';
 export default function SignUp(props) {
   const { scrollRefTwo } = props;
+
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+
+  const signUpRequest = () => {
+    alert('Sign Up is currently disabled. Please try again later. We apologize for any inconvenience this may have caused you.')
+  }
 
   return (
     <>
@@ -13,14 +21,14 @@ export default function SignUp(props) {
             <form className="mx-10">
               <div className="mt-10">
                 <label for="name" className="block text-4xl font-brandmark">Full Name</label>
-                <input type="text" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none"/>
+                <input onChange={(e) => setName(e.target.value)} required={true} placeholder="John Doe" type="text" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none"/>
               </div>
               <div className="mt-10">
                 <label for="email" className="block text-4xl font-brandmark">Email</label>
-                <input type="email" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none" />
+                <input onChange={(e) => setEmail(e.target.value)} required={true} placeholder="example@gmail.com" type="email" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none" />
               </div>
               <div className="flex justify-center my-10">
-                <button className="text-4xl font-brandmark w-full hover:bg-eva-bg hover:text-eva-text hover:border-eva-highlight" >Sign Up!</button>
+                <button onClick={() => signUpRequest()} className="text-4xl font-brandmark w-full hover:bg-eva-bg hover:text-eva-text hover:border-eva-highlight" >Sign Up!</button>
               </div>
               <p className="flex flex-wrap font-brandmark text-gray-500">When the app becomes available, you will receive an email notifying you to download the app.</p>
               <p className="flex flex-wrap font-brandmark mb-10 text-gray-500">Expected release in Q2 2023.</p>
