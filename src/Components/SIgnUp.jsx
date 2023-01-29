@@ -6,7 +6,7 @@ export default function SignUp(props) {
   const [email, setEmail] = useState("")
 
   const signUpRequest = () => {
-    
+    alert('Sign Up is currently disabled. Please try again later. We apologize for any inconvenience this may have caused you.')
   }
 
   return (
