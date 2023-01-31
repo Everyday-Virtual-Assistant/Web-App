@@ -11,7 +11,7 @@ export default function SignUp(props) {
 
   return (
     <>
-      <div ref={scrollRefTwo} className="flex justify-center w-screen h-screen bg-layered-waves bg-no-repeat bg-cover">
+      <div ref={scrollRefTwo} className="flex justify-center w-full h-screen bg-layered-waves bg-no-repeat bg-cover">
         <div className="mt-40">
           <div className="flex flex-col items-center">
             <h1 className="pb-5 text-8xl font-brandmark" >Sign Up</h1>

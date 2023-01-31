@@ -4,16 +4,16 @@ import DoubleDownArrow from '../assets/DoubleDownArrown.jsx';
 export default function Hero(props) {
   const { scrollRefOne } = props;
   return (
-    <>
-      <div className="flex items-center justify-center w-screen h-screen bg-gradient-to-b from-eva-bg to-black">
+    <div className="flex flex-col justify-center items-center bg-gradient-to-b from-eva-bg to-black h-screen">
+      <div className="flex justify-center items-center h-full">
         <EvaTransparentLogo />
       </div>
       <div
-        className="animate-bounce absolute top-[90%] lg:left-[48%] md:left-[45%] xs:left-[38%] hover:cursor-pointer"
+        className="flex w-full justify-center"
         onClick={() => scrollRefOne.current.scrollIntoView({behavior: 'smooth'})}
       >
         <DoubleDownArrow  />
       </div>
-    </>
+    </div>
   )
 }
