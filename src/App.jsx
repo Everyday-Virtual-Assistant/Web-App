@@ -13,12 +13,12 @@ function App() {
       <div className="w-full h-screen">
         <Hero scrollRefOne={scrollRefOne} />
       </div>
-      {/* <div className="w-full h-screen">
+      <div className="w-full h-screen">
         <IPhoneDisplay scrollRefOne={scrollRefOne} scrollRefTwo={scrollRefTwo} />
       </div>
       <div className="w-full h-screen ">
         <SignUp scrollRefTwo={scrollRefTwo} />
-      </div> */}
+      </div>
     </div>
   )
 }

@@ -13,14 +13,14 @@ export default function SignUp(props) {
   return (
     <>
       <div ref={scrollRefTwo} className="flex justify-center w-full h-screen bg-layered-waves bg-no-repeat bg-cover">
-        <div className="mt-40">
-          <div className="flex flex-col items-center">
-            <h1 className="pb-5 text-8xl font-brandmark text-eva-text" >Sign Up</h1>
-            <h1 className="text-8xl font-brandmark text-eva-text" >For Early Access!</h1>
+        <div className="xs: mt-10 lg:mt-40">
+          <div className="flex flex-col items-center xs:pt-10">
+            <h1 className="xs:text-5xl lg:pb-5 lg:text-8xl font-brandmark text-eva-text" >Sign Up</h1>
+            <h1 className="xs:text-4xl lg:text-8xl font-brandmark text-eva-text" >For Early Access!</h1>
           </div>
-          <div className="flex mx-auto w-1/2 mt-20 border-4 border-eva-highlight rounded-xl h-fit bg-black drop-shadow-[0_25px_25px_rgb(0,0,0,0.6)]">
-            <form className="mx-10">
-              <div className="mt-10">
+          <div className="flex xs:w-11/12 mx-auto w-1/2 xs:mt-10 lg:mt-20 border-4 border-eva-highlight rounded-xl h-fit bg-black drop-shadow-[0_25px_25px_rgb(0,0,0,0.6)]">
+            <form className=" xs:mx-5 lg:mx-10">
+              <div className="xs:mt-5 lg:mt-10">
                 <label for="name" className="block text-4xl font-brandmark text-eva-text">Full Name</label>
                 <input onChange={(e) => setName(e.target.value)} required={true} placeholder="John Doe" type="text" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none"/>
               </div>
