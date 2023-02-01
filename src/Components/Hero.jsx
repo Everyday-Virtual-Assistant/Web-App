@@ -5,7 +5,7 @@ export default function Hero(props) {
   const { scrollRefOne } = props;
   return (
     <div className="flex flex-col justify-center items-center bg-gradient-to-b from-eva-bg to-black h-screen">
-      <div className="flex justify-center items-center h-full">
+      <div className="flex justify-center items-center w-full h-full">
         <EvaTransparentLogo />
       </div>
       <div
