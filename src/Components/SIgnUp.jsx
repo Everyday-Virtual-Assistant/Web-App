@@ -18,7 +18,7 @@ export default function SignUp(props) {
             <h1 className="xs:text-5xl lg:pb-5 lg:text-8xl font-brandmark text-eva-text" >Sign Up</h1>
             <h1 className="xs:text-4xl lg:text-8xl font-brandmark text-eva-text" >For Early Access!</h1>
           </div>
-          <div className="flex xs:w-11/12 mx-auto w-1/2 xs:mt-10 lg:mt-20 border-4 border-eva-highlight rounded-xl h-fit bg-black drop-shadow-[0_25px_25px_rgb(0,0,0,0.6)]">
+          <div className="flex xs:w-11/12 lg:w-1/2 mx-auto w-1/2 xs:mt-10 lg:mt-20 border-4 border-eva-highlight rounded-xl h-fit bg-black drop-shadow-[0_25px_25px_rgb(0,0,0,0.6)]">
             <form className=" xs:mx-5 lg:mx-10">
               <div className="xs:mt-5 lg:mt-10">
                 <label for="name" className="block text-4xl font-brandmark text-eva-text">Full Name</label>
