@@ -19,7 +19,7 @@ export default function IPhoneDisplay(props) {
         </div>
       </div>
       <div
-        className="flex w-full justify-center"
+        className="flex w-full justify-center xs:hidden lg:flex"
         onClick={() => scrollRefTwo.current.scrollIntoView({behavior: 'smooth'})}
       >
         <DoubleDownArrow  />
