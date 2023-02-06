@@ -12,8 +12,8 @@ export default function SignUp(props) {
 
   return (
     <>
-      <div ref={scrollRefTwo} className="flex justify-center w-full h-screen bg-layered-waves bg-no-repeat bg-cover">
-        <div className="xs: mt-10 lg:mt-40">
+      <div ref={scrollRefTwo} className="flex justify-center items-center w-full h-screen bg-layered-waves bg-no-repeat bg-cover">
+        <div>
           <div className="flex flex-col items-center xs:pt-10">
             <h1 className="xs:text-5xl lg:pb-5 lg:text-8xl font-brandmark text-eva-text" >Sign Up</h1>
             <h1 className="xs:text-4xl lg:text-8xl font-brandmark text-eva-text" >For Early Access!</h1>
@@ -35,7 +35,7 @@ export default function SignUp(props) {
               <p className="flex flex-wrap font-brandmark mb-10 text-gray-500">Expected release in Q2 2023.</p>
             </form>
           </div>
-          </div>
+        </div>
       </div>
     </>
   )
