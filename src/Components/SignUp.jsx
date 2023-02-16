@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Modal from './Modal';
 
 export default function SignUp(props) {
   const { scrollRefTwo } = props;
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [showModal, setShowModal] = useState(true);
+  const [disabledInputs, setDisabledInputs] = useState(false);
 
   const signUpRoute = `${import.meta.env.VITE_DB_ENDPOINT}/add-new-early-user`;
   // const signUpRoute = `http://localhost:3000/add-new-early-user`; this is for locally testing purposes
@@ -14,40 +17,40 @@ export default function SignUp(props) {
     console.log(name, email);
     event.preventDefault();
     try {
-      const result = await axios.post(signUpRoute, { name, email });
-      console.log(result);
+      // const result = await axios.post(signUpRoute, { name, email });
+      // if (result.status === 200) setDisabledInputs(true);
+      setShowModal(true);
     } catch (error) {
       console.error(error);
     }
   }
 
   return (
-    <>
-      <div ref={scrollRefTwo} className="flex justify-center items-center w-full h-screen bg-layered-waves bg-no-repeat bg-cover">
-        <div>
-          <div className="flex flex-col items-center xs:pt-10">
-            <h1 className="xs:text-5xl lg:pb-5 lg:text-8xl font-brandmark text-eva-text" >Sign Up</h1>
-            <h1 className="xs:text-4xl lg:text-8xl font-brandmark text-eva-text" >For Early Access!</h1>
-          </div>
-          <div className="flex xs:w-11/12 lg:w-1/2 mx-auto w-1/2 xs:mt-10 lg:mt-20 border-4 border-eva-highlight rounded-xl h-fit bg-black drop-shadow-[0_25px_25px_rgb(0,0,0,0.6)]">
-            <form className=" xs:mx-5 lg:mx-10">
-              <div className="xs:mt-5 lg:mt-10">
-                <label className="block text-4xl font-brandmark text-eva-text">Full Name</label>
-                <input onChange={(e) => setName(e.target.value)} required={true} placeholder="John Doe" type="text" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none"/>
-              </div>
-              <div className="mt-10">
-                <label className="block text-4xl font-brandmark text-eva-text">Email</label>
-                <input onChange={(e) => setEmail(e.target.value)} required={true} placeholder="example@gmail.com" type="email" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none" />
-              </div>
-              <div className="flex justify-center my-10">
-                <button onClick={(e) => signUpRequest(e)} className=" bg-black text-4xl font-brandmark w-full hover:bg-eva-bg hover:text-eva-text hover:border-eva-highlight text-eva-text" >Sign Up!</button>
-              </div>
-              <p className="flex flex-wrap font-brandmark text-gray-500">When the app becomes available, you will receive an email notifying you to download the app.</p>
-              <p className="flex flex-wrap font-brandmark mb-10 text-gray-500">Expected release in Q2 2023.</p>
-            </form>
-          </div>
+    <div ref={scrollRefTwo} className="flex justify-center items-center w-full h-screen bg-layered-waves bg-no-repeat bg-cover">
+      <div>
+        <div className="flex flex-col items-center xs:pt-10">
+          <h1 className="xs:text-5xl lg:pb-5 lg:text-8xl font-brandmark text-eva-text" >Sign Up</h1>
+          <h1 className="xs:text-4xl lg:text-8xl font-brandmark text-eva-text" >For Early Access!</h1>
+        </div>
+        <div className="flex xs:w-11/12 lg:w-1/2 mx-auto w-1/2 xs:mt-10 lg:mt-20 border-4 border-eva-highlight rounded-xl h-fit bg-black drop-shadow-[0_25px_25px_rgb(0,0,0,0.6)]">
+          <form className=" xs:mx-5 lg:mx-10">
+            <div className="xs:mt-5 lg:mt-10">
+              <label className="block text-4xl font-brandmark text-eva-text">Full Name</label>
+              <input disabled={disabledInputs} onChange={(e) => setName(e.target.value)} required={true} placeholder="John Doe" type="text" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none"/>
+            </div>
+            <div className="mt-10">
+              <label className="block text-4xl font-brandmark text-eva-text">Email</label>
+              <input disabled={disabledInputs} onChange={(e) => setEmail(e.target.value)} required={true} placeholder="example@gmail.com" type="email" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none" />
+            </div>
+            <div className="flex justify-center my-10">
+              <button onClick={(e) => signUpRequest(e)} className=" bg-black text-4xl font-brandmark w-full hover:bg-eva-bg hover:text-eva-text hover:border-eva-highlight text-eva-text" >Sign Up!</button>
+            </div>
+            <p className="flex flex-wrap font-brandmark text-gray-500">When the app becomes available, you will receive an email notifying you to download the app.</p>
+            <p className="flex flex-wrap font-brandmark mb-10 text-gray-500">Expected release in Q2 2023.</p>
+          </form>
         </div>
       </div>
-    </>
+      {showModal && <Modal modalTrigger={setShowModal} />}
+    </div>
   )
 }
