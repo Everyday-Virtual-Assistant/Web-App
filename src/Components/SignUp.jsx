@@ -7,8 +7,8 @@ export default function SignUp(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  // const signUpRoute = `${import.meta.env.VITE_DB_ENDPOINT}/add-new-early-user`;
-  const signUpRoute = `http://localhost:3000/add-new-early-user`;
+  const signUpRoute = `${import.meta.env.VITE_DB_ENDPOINT}/add-new-early-user`;
+  // const signUpRoute = `http://localhost:3000/add-new-early-user`; this is for locally testing purposes
 
   const signUpRequest = async (event) => {
     console.log(name, email);
