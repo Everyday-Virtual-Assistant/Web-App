@@ -1,13 +1,24 @@
 import { useState } from 'react';
+import axios from 'axios';
+
 export default function SignUp(props) {
   const { scrollRefTwo } = props;
 
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
-  const signUpRequest = (event) => {
+  const signUpRoute = `${import.meta.env.VITE_DB_ENDPOINT}/add-new-early-user`;
+  // const signUpRoute = `http://localhost:3000/add-new-early-user`; this is for locally testing purposes
+
+  const signUpRequest = async (event) => {
+    console.log(name, email);
     event.preventDefault();
-    alert('Sign Up is currently disabled. Please try again later. We apologize for any inconvenience this may have caused you.')
+    try {
+      const result = await axios.post(signUpRoute, { name, email });
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -21,11 +32,11 @@ export default function SignUp(props) {
           <div className="flex xs:w-11/12 lg:w-1/2 mx-auto w-1/2 xs:mt-10 lg:mt-20 border-4 border-eva-highlight rounded-xl h-fit bg-black drop-shadow-[0_25px_25px_rgb(0,0,0,0.6)]">
             <form className=" xs:mx-5 lg:mx-10">
               <div className="xs:mt-5 lg:mt-10">
-                <label for="name" className="block text-4xl font-brandmark text-eva-text">Full Name</label>
+                <label className="block text-4xl font-brandmark text-eva-text">Full Name</label>
                 <input onChange={(e) => setName(e.target.value)} required={true} placeholder="John Doe" type="text" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none"/>
               </div>
               <div className="mt-10">
-                <label for="email" className="block text-4xl font-brandmark text-eva-text">Email</label>
+                <label className="block text-4xl font-brandmark text-eva-text">Email</label>
                 <input onChange={(e) => setEmail(e.target.value)} required={true} placeholder="example@gmail.com" type="email" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none" />
               </div>
               <div className="flex justify-center my-10">
