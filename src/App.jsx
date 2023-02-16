@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Hero from './Components/Hero';
 import IPhoneDisplay from './Components/iOSDisplay';
-import SignUp from './Components/SIgnUp';
+import SignUp from './Components/SignUp';
 
 function App() {
 
