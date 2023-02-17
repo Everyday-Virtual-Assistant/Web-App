@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
+import { Transition, Dialog } from '@headlessui/react'
 import axios from 'axios';
-import Modal from './Modal';
 
 export default function SignUp(props) {
   const { scrollRefTwo } = props;
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [disabledInputs, setDisabledInputs] = useState(false);
 
   const signUpRoute = `${import.meta.env.VITE_DB_ENDPOINT}/add-new-early-user`;
@@ -23,6 +23,14 @@ export default function SignUp(props) {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  function closeModal() {
+    setShowModal(false);
+  }
+
+  function openModal() {
+    setShowModal(true);
   }
 
   return (
@@ -50,7 +58,59 @@ export default function SignUp(props) {
           </form>
         </div>
       </div>
-      {showModal && <Modal modalTrigger={setShowModal} />}
+      <Transition appear show={showModal} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 flex items-center justify-center h-screen">
+            <div className="text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="border-4 border-eva-highlight bg-black w-full max-w-xl p-6 overflow-hidden text-left align-middle transition-all transform shadow-xl rounded-2xl">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-center text-eva-text text-6xl font-brandmark mb-10"
+                  >
+                    Thank You for Signing Up!
+                  </Dialog.Title>
+                  <div className="mt-2">
+                    <p className="text-eva-text text-xl font-brandmark">
+                      Everyone here at EVA thanks you for signing up to be an Early Access User. We Will keep you updated via email and let you know when a version is available for download.
+                    </p>
+                  </div>
+
+                  <div className="mt-4">
+                    <button
+                      type="button"
+                      className="bg-eva-bg text-4xl w-full text-eva-text font-brandmark mt-5"
+                      onClick={closeModal}
+                    >
+                      Got it, thanks!
+                    </button>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </div>
   )
 }
