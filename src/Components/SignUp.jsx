@@ -43,7 +43,7 @@ export default function SignUp(props) {
               <input disabled={disabledInputs} onChange={(e) => setEmail(e.target.value)} required={true} placeholder="example@gmail.com" type="email" className="pl-2 rounded-lg py-2 w-full my-2 text-2xl font-brandmark outline-none" />
             </div>
             <div className="flex justify-center my-10">
-              <button onClick={(e) => signUpRequest(e)} className=" bg-black text-4xl font-brandmark w-full hover:bg-eva-bg hover:text-eva-text hover:border-eva-highlight text-eva-text" >Sign Up!</button>
+              <button onClick={(e) => signUpRequest(e)} disabled={disabledInputs} className=" bg-black text-4xl font-brandmark w-full hover:bg-eva-bg hover:text-eva-text hover:border-eva-highlight text-eva-text" >Sign Up!</button>
             </div>
             <p className="flex flex-wrap font-brandmark text-gray-500">When the app becomes available, you will receive an email notifying you to download the app.</p>
             <p className="flex flex-wrap font-brandmark mb-10 text-gray-500">Expected release in Q2 2023.</p>
