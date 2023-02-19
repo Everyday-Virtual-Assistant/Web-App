@@ -10,7 +10,7 @@ export default function SignUp(props) {
   const [showModal, setShowModal] = useState(false);
   const [disabledInputs, setDisabledInputs] = useState(false);
 
-  const signUpRoute = `${import.meta.env.VITE_DB_ENDPOINT}/add-new-early-user`;
+  const signUpRoute = `${import.meta.env.VITE_DB_ENDPOINT}add-new-early-user`;
   // const signUpRoute = `http://localhost:3000/add-new-early-user`; this is for locally testing purposes
 
   const signUpRequest = async (event) => {
