@@ -17,20 +17,12 @@ export default function SignUp(props) {
     console.log(name, email);
     event.preventDefault();
     try {
-      // const result = await axios.post(signUpRoute, { name, email });
-      // if (result.status === 200) setDisabledInputs(true);
+      const result = await axios.post(signUpRoute, { name, email });
+      if (result.status === 200) setDisabledInputs(true);
       setShowModal(true);
     } catch (error) {
       console.error(error);
     }
-  }
-
-  function closeModal() {
-    setShowModal(false);
-  }
-
-  function openModal() {
-    setShowModal(true);
   }
 
   return (
@@ -59,7 +51,7 @@ export default function SignUp(props) {
         </div>
       </div>
       <Transition appear show={showModal} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-10" onClose={() => setShowModal(false)}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -69,7 +61,7 @@ export default function SignUp(props) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
+            <div className="fixed inset-0 bg-black bg-opacity-50" />
           </Transition.Child>
 
           <div className="fixed inset-0 flex items-center justify-center h-screen">
@@ -83,10 +75,10 @@ export default function SignUp(props) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="border-4 border-eva-highlight bg-black w-full max-w-xl p-6 overflow-hidden text-left align-middle transition-all transform shadow-xl rounded-2xl">
+                <Dialog.Panel className="border-4 border-eva-highlight bg-black xs:mx-auto xs:w-11/12 md:lg:xl:w-full max-w-xl p-6 overflow-hidden text-left align-middle transition-all transform shadow-xl rounded-2xl">
                   <Dialog.Title
                     as="h3"
-                    className="text-center text-eva-text text-6xl font-brandmark mb-10"
+                    className="text-center text-eva-text xs:text-5xl md:lg:xl:text-6xl font-brandmark mb-10"
                   >
                     Thank You for Signing Up!
                   </Dialog.Title>
@@ -99,8 +91,8 @@ export default function SignUp(props) {
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="bg-eva-bg text-4xl w-full text-eva-text font-brandmark mt-5"
-                      onClick={closeModal}
+                      className="bg-eva-bg text-4xl w-full text-eva-text font-brandmark mt-5 xs:py-7 xs:px-0"
+                      onClick={() => setShowModal(false)}
                     >
                       Got it, thanks!
                     </button>
