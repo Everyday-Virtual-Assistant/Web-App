@@ -14,7 +14,6 @@ export default function SignUp(props) {
   // const signUpRoute = `http://localhost:3000/add-new-early-user`; this is for locally testing purposes
 
   const signUpRequest = async (event) => {
-    console.log(name, email);
     event.preventDefault();
     try {
       const result = await axios.post(signUpRoute, { name, email });
